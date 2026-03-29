@@ -164,7 +164,7 @@ export default function App() {
   const speak = async (text) => {
     if (isGeneratingAudio) return;
     
-    const apiKey = ""; // API-nyckel tillhandahålls av miljön i bakgrunden
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;// API-nyckel tillhandahålls av miljön i bakgrunden
 
     setIsGeneratingAudio(true);
     const maxRetries = 5;
@@ -271,7 +271,7 @@ export default function App() {
 
   const generateNewLevels = async () => {
     setIsGeneratingLevels(true);
-    const apiKey = ""; // API-nyckel tillhandahålls av miljön i bakgrunden
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY; // API-nyckel tillhandahålls av miljön i bakgrunden
 
     try {
       const response = await fetch(
